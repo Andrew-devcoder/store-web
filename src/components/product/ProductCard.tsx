@@ -1,36 +1,27 @@
+import { Product } from '@/app/lib/types';
 import Image from 'next/image';
-export default function ProductCard({
-	el,
-}: {
-	el: {
-		id: number;
-		name: string;
-		price: string;
-		color: string;
-		imageSrc: string;
-		imageAlt: string;
-		sizes: string[];
-		colors: string[];
-		rating: number;
-		reviewCount: number;
-	};
-}) {
+
+type Props = {
+	product: Product;
+};
+
+export default function ProductCard({ product }: Props) {
 	return (
 		<>
 			<Image
-				alt={el.imageAlt}
-				src={el.imageSrc}
+				alt={product.imageAlt}
+				src={product.imageSrc}
 				className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
 			/>
 			<div className="mt-4 flex justify-between">
 				<div>
 					<h3 className="text-sm text-gray-200">
 						<span aria-hidden="true" className="absolute inset-0" />
-						{el.name}
+						{product.name}
 					</h3>
-					<p className="mt-1 text-sm text-gray-300">{el.color}</p>
+					<p className="mt-1 text-sm text-gray-300">{product.color}</p>
 				</div>
-				<p className="text-sm font-medium text-gray-400">{el.price}</p>
+				<p className="text-sm font-medium text-gray-400">{product.price}</p>
 			</div>
 		</>
 	);
