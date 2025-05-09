@@ -1,7 +1,20 @@
 import Image from 'next/image';
-import Link from 'next/link';
-
-export default function ProductCard({ el }: { el: any }) {
+export default function ProductCard({
+	el,
+}: {
+	el: {
+		id: number;
+		name: string;
+		price: string;
+		color: string;
+		imageSrc: string;
+		imageAlt: string;
+		sizes: string[];
+		colors: string[];
+		rating: number;
+		reviewCount: number;
+	};
+}) {
 	return (
 		<>
 			<Image
