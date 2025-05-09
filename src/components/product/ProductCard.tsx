@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ProductCard({ el }: { el: any }) {
 	return (
 		<>
-			<img
+			<Image
 				alt={el.imageAlt}
 				src={el.imageSrc}
 				className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
