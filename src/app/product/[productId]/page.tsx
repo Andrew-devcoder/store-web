@@ -51,6 +51,7 @@ export default function ProductDetails({ params }: { params: Promise<{ productId
 											/>
 										))}
 									</div>
+
 									<a
 										href="#"
 										className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
